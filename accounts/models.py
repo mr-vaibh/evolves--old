@@ -1,18 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
-from shop.models import Product
+from shop.models import Address
 from django.db.models.signals import post_save
 
 # Create your models here.
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	phone = models.CharField(max_length=10)
+	phone = models.PositiveSmallIntegerField(max_length=10)
 	dob = models.DateField(null=True, blank=True)
-	gender = models.CharField(max_length=50, choices=[('',''), ('Female','Female'), ('male','Male')],)
-	about = models.TextField(default='')
-	wishlist = models.ManyToManyField(Product, related_name='whishlist')
-	user_img = models.ImageField(upload_to='user/img', blank=True, default='user/img/default.png')
+	gender = models.CharField(default='', max_length=50, blank=True)
+	default_address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='default_address', blank=True, default=1)
 
 	def __str__(self):
 		return self.user.username

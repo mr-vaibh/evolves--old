@@ -94,9 +94,9 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    # },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
@@ -129,7 +129,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/shop'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -144,9 +143,12 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Managing Media Files
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
+LOGIN_REDIRECT_URL = '/shop'
+
+# Bootstrap 4 with Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Activate Django-Heroku.

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 import os
@@ -9,10 +10,25 @@ def get_upload_path(instance, filename):
     return f"shop/img/product/{instance.url}/{filename}"
 
 # Create your models here.
+class Country(models.Model):
+    country_name = models.CharField(max_length=50, blank=False)
+    def __str__(self):
+        return self.country_name
+
+class Wishlist(models.Model):
+    name = models.CharField(max_length=50, default='')
+    wishlist = models.TextField(default=None, null=True, blank=True)
+    def __str__(self):
+        return self.name
+
+class Address(models.Model):
+    name = models.CharField(max_length=50, default='')
+    address = models.TextField(default=None, null=True, blank=True)
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, default='', blank=False)
-
     def __str__(self):
         return self.category_name
 
@@ -25,6 +41,7 @@ class Product(models.Model):
     description = models.TextField()
     new_price = models.PositiveIntegerField(null=True,blank=True)
     pub_date = models.DateField()
+    rate = models.PositiveSmallIntegerField(default=0, blank=False, max_length=2)
     warranty = models.CharField(max_length=20, default='No')
     replacement = models.CharField(max_length=20, default='No')
     available = models.BooleanField(default=True)

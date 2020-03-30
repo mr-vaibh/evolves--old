@@ -4,6 +4,7 @@ from django.conf import settings
 
 from . import views
 
+app_name = 'shop'
 urlpatterns = [
     path('', views.index, name='index'),
     path('product/<int:id>/<url>/', views.prodView, name='prodView'),

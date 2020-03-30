@@ -1,0 +1,105 @@
+{% extends 'shop/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Your Account • Evolves{% endblock title %}
+
+{% block body %}
+
+<div class="container my-5">
+<style>
+img{
+    user-select: none;
+}
+.account:hover{
+    background-color: #ffbbcf24;
+}
+</style>
+    <div class="row my-5">
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 my-auto">
+                    <img src="{% static 'accounts/images/order.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Orders</h5>
+                        <p class="card-text">Track, return and buy things again.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 my-auto">
+                    <img src="{% static 'accounts/images/sign-in-lock.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Login and Security</h5>
+                        <p class="card-text">Edit login, name, mobile number.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 my-auto">
+                    <img src="{% static 'accounts/images/address.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Addresses</h5>
+                        <p class="card-text">Edit addresses for orders and gift.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row my-5">
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 my-auto">
+                    <img src="{% static 'accounts/images/digital.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital contents and devices</h5>
+                        <p class="card-text">Apps, content, devices and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 mt-3">
+                    <img src="{% static 'accounts/images/privacy.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Privacy Policy</h5>
+                        <p class="card-text">See all our Policies and T&Cs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account card mx-4 p-2" style="max-width: 340px; cursor:pointer;">
+            <div class="row no-gutters">
+                <div class="col-md-4 mt-3">
+                    <img src="{% static 'accounts/images/feedback.png' %}" class="card-img" alt="..." onContextMenu="return false;" draggable="false">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Feedback</h5>
+                        <p class="card-text">Submit a report regarding our service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

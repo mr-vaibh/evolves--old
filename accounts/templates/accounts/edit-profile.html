@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Account Details • Evolves{% endblock title %}
+
+{% block body %}
+
+
+<div class="container my-5">    
+<img src="{% static 'shop/img/man-using-laptop.png' %}" class="editPageImg img-responsive float-right" height="477px" onContextMenu="return false;" draggable="false" style alt="...">
+    <div class="col-lg-6">
+        <form method="POST">
+            {% csrf_token %}
+            {{edituser_form|crispy}}
+            {{editprofile_form|crispy}}
+            <button type="submit" class="site-btn my-2">Save</button>
+        </form>
+    <p class="changePassNavPara font-italic">To change password click <a href="{% url 'accounts:changePass' %}">here</a>.</p>
+    </div>
+</div>
+
+{% endblock body %}
